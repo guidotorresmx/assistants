@@ -1,0 +1,7 @@
+{
+  watson:            {
+      APIKEY:        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      WORKSPACE_ID:  "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+      URL:           "https://api.XX-XXXXXXX.assistant.watson.cloud.ibm.com/instances/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+    }
+}
