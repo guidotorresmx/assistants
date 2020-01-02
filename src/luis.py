@@ -13,9 +13,10 @@ import datetime
 from pprint import pprint
 from azure.cognitiveservices.language.luis.authoring import LUISAuthoringClient
 from msrest.authentication import CognitiveServicesCredentials
+from baseAssistant import baseAssistant
 
-del luis
-class luis:
+
+class luis(baseAssistant):
     """
     https://github.com/microsoft/Cognitive-LUIS-Python
     https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/9ebf063909771ec6d03cba42ccec9eecdec6e538/samples/language/luis/luis_authoring_samples.py
@@ -32,7 +33,7 @@ class luis:
 
     def getCreds(self, credsPath = None):
         if credsPath == None:
-            credsPath = os.path.join("creds","creds.yaml")
+            credsPath = os.path.join("..","creds","creds.yaml")
         creds = {}
         with open( credsPath, "r" )  as stream:
             try:
@@ -65,30 +66,11 @@ class luis:
             self.deleteIntent(intent)
 
 
-    """
-    try:
-        # Create a LUIS app
-        default_app_name = "Contoso-{}".format(datetime.datetime.now())
-        version_id = "0.1"
+    def getResponse(self, msg = ""):
+        raise Exception("not implemented yet!")
 
-        app_id = a.assistant.apps.add({
-            'name': default_app_name,
-            'initial_version_id': version_id,
-            'description': "New App created with LUIS Python sample",
-            'culture': 'en-us',
-        })
-
-        destination_name = "Destination"
-        destination_id = a.assistant.model.add_entity(
-            app_id,
-            version_id,
-            name = "testName",
-            raw= True
-        )
-
+    def setData(self, data):
         class_name = "Class"
-
-
         flight_name = "Flight"
 
         find_economy_to_madrid = "find flights in economy to Madrid"
@@ -126,40 +108,41 @@ class luis:
 
 
         utterances_result = a.assistant.examples.batch(
-            app_id,
-            version_id,
+            self.app_id,
+            self.version_id,
             utterances,
             raw = True
         )
 
-        async_training = a.assistant.train.train_version(app_id, version_id, raw = True)
-        async_training = a.assistant.train.train_version(app_id, version_id, raw = False)
 
-        is_trained = async_training.status == "UpToDate"
+        def update():
+            async_training = a.assistant.train.train_version(app_id, version_id, raw = True)
 
-        trained_status = ["UpToDate", "Success"]
-        while not is_trained:
-            time.sleep(1)
-            status = a.assistant.train.get_status(app_id, version_id)
-            is_trained = all(
-                m.details.status in trained_status for m in status)
+            async_training = a.assistant.train.train_version(app_id, version_id, raw = False)
 
-        publish_result = a.assistant.apps.publish(
-            app_id,
-            version_id = version_id,
-            is_staging = False,
-            region = 'westus'
-        )
+            is_trained = async_training.status == "UpToDate"
 
-        endpoint = publish_result.endpoint_url + \
-            "?subscription-key=" + a.creds["luis"]["APIKEY"] + "&q="
+            trained_status = ["UpToDate", "Success"]
+            while not is_trained:
+                time.sleep(1)
+                status = a.assistant.train.get_status(app_id, version_id)
+                is_trained = all(
+                    m.details.status in trained_status for m in status)
 
-    except Exception as err:
-        print("Encountered exception. {}".format(err))
-    """
+            publish_result = a.assistant.apps.publish(
+                app_id,
+                version_id = version_id,
+                is_staging = False,
+                region = 'westus'
+            )
 
-a.getWorkspaceID()
-a.getIntents()
-a.deleteAllIntents()
+            self.endpoint = publish_result.endpoint_url + \
+                "?subscription-key=" + a.creds["luis"]["APIKEY"] + "&q="
 
-a = luis()
+
+
+if __name__() == "__main__":
+    a = luis()
+    a.getWorkspaceID()
+    a.getIntents()
+    a.deleteAllIntents()

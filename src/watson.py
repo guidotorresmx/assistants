@@ -5,7 +5,6 @@
         create dataset and test it
         create unittests
 """
-
 import os
 import yaml
 from ibm_watson import AssistantV1
@@ -13,8 +12,6 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import requests
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
-del watson
 
 class watson:
     """
@@ -56,12 +53,8 @@ class watson:
         ).get_result()
         return response
 
-    def setData(self, dataPath = "data.yaml"):
-
-        raise Exception("not implemented yet")
-
-        data = {}
-        with open( dataPath , "r" )  as stream:
+    def setData(self, filename = "data.json"):
+        with open( os.path.join("..","data", filename) , "r" )  as stream:
             try:
                 data = yaml.safe_load(stream)
             except yaml.YAMLError as exc:
