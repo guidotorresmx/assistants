@@ -70,6 +70,11 @@ class luis(baseAssistant):
         raise Exception("not implemented yet!")
 
     def setData(self, data):
+        #change this for group in pandas and yaml for csv
+        for key in data.counter.keys:
+            for i, label in enumerate(labels):
+                if label== key:
+
         class_name = "Class"
         flight_name = "Flight"
 
@@ -115,34 +120,39 @@ class luis(baseAssistant):
         )
 
 
-        def update():
-            async_training = a.assistant.train.train_version(app_id, version_id, raw = True)
+    def update(self):
+        async_training = a.assistant.train.train_version(self.app_id, self.version_id, raw = True)
 
-            async_training = a.assistant.train.train_version(app_id, version_id, raw = False)
+        async_training = a.assistant.train.train_version(self.app_id, self.version_id, raw = False)
 
-            is_trained = async_training.status == "UpToDate"
+        is_trained = async_training.status == "UpToDate"
 
-            trained_status = ["UpToDate", "Success"]
-            while not is_trained:
-                time.sleep(1)
-                status = a.assistant.train.get_status(app_id, version_id)
-                is_trained = all(
-                    m.details.status in trained_status for m in status)
+        trained_status = ["UpToDate", "Success"]
+        while not is_trained:
+            time.sleep(1)
+            status = a.assistant.train.get_status(app_id, version_id)
+            is_trained = all(
+                m.details.status in trained_status for m in status)
 
-            publish_result = a.assistant.apps.publish(
-                app_id,
-                version_id = version_id,
-                is_staging = False,
-                region = 'westus'
-            )
+        publish_result = a.assistant.apps.publish(
+            app_id,
+            version_id = version_id,
+            is_staging = False,
+            region = 'westus'
+        )
 
-            self.endpoint = publish_result.endpoint_url + \
-                "?subscription-key=" + a.creds["luis"]["APIKEY"] + "&q="
+        self.endpoint = publish_result.endpoint_url + \
+            "?subscription-key=" + a.creds["luis"]["APIKEY"] + "&q="
 
 
 
 if __name__() == "__main__":
     a = luis()
+    a.update()
     a.getWorkspaceID()
     a.getIntents()
     a.deleteAllIntents()
+    async_training = a.assistant.train.train_version(a.app_id, a.version_id, raw = True)
+    async_training.response.status
+    dir(async_training)
+    dir(async_training.response)

@@ -4,6 +4,7 @@ import yaml
 from collections import Counter
 from nltk.corpus import movie_reviews
 from nltk.corpus import senseval
+import pandas as pd
 
 
 class datasetGenerator():
@@ -46,12 +47,6 @@ class datasetGenerator():
         self.labels    = [self.labels[i]    for i in self.sampleList]
         self.uniqueLabels = dict(Counter(self.labels))
 
-    def saveData(self, filename = "data.yaml"):
-        j = {}
-        j["sentences"] = self.sentences
-        j["labels"] = self.labels
-        j["counter"] = self.uniqueLabels
-        with open(os.path.join("..","data", filename), 'w') as outfile:
-            yaml.dump(j, outfile)
-
-d = datasetGenerator()
+    def saveData(self, filename = "data.csv"):
+        df = pd.DataFrame(data = {"sentences": self.sentences, "labels": self.labels})
+        df.to_csv(os.path.join("..","data","data.csv"),index= False)
