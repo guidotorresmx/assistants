@@ -13,14 +13,17 @@ import datetime
 from pprint import pprint
 from azure.cognitiveservices.language.luis.authoring import LUISAuthoringClient
 from msrest.authentication import CognitiveServicesCredentials
-from baseAssistant import baseAssistant
 import pandas as pd
+from baseAssistant import baseAssistant
+import requests
+import urllib
 
 class luis(baseAssistant):
     """
     https://github.com/microsoft/Cognitive-LUIS-Python
     https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/9ebf063909771ec6d03cba42ccec9eecdec6e538/samples/language/luis/luis_authoring_samples.py
     """
+    #TODO: update to version 0.3 or 0.2
     def __init__(self):
         #TODO: try with yaml app id, else: fall down to get onlien workspaces
         self.creds = self.getCreds()
@@ -66,8 +69,15 @@ class luis(baseAssistant):
             self.deleteIntent(intent)
 
 
-    def getResponse(self, msg = ""):
-        raise Exception("not implemented yet!")
+    def getResponse(self, msg = "bye"):
+        response = {}
+        try:
+            response = requests.get(self.creds["luis"]["ENDPOINT"] + urllib.parse.quote_plus(msg)).json()
+        except:
+            self.update()
+            response = requests.get(self.endpoint + urllib.parse.quote_plus(msg)).json()
+
+        return response["topScoringIntent"]
 
     def setData(self, filename = "data.csv"):
         def setEntityData(intent, utterancesList):
@@ -94,6 +104,8 @@ class luis(baseAssistant):
             utterancesList = df["sentences"].loc[df["labels"] == label].values
             setEntityData(label, utterancesList)
 
+        self.update()
+
     def update(self):
         #async_training = a.assistant.train.train_version(self.app_id, self.version_id, raw = True)
         async_training = self.assistant.train.train_version(self.app_id, self.version_id, raw = False)
@@ -113,4 +125,4 @@ class luis(baseAssistant):
         )
 
         self.endpoint = publish_result.endpoint_url + \
-            "?subscription-key=" + a.creds["luis"]["APIKEY"] + "&q="
+            "?subscription-key=" + self.creds["luis"]["APIKEY"] + "&q="

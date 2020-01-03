@@ -8,7 +8,6 @@ import pandas as pd
 import json
 
 
-
 class datasetGenerator():
     """
     creates a base dataset from senseval in NLTK
@@ -16,6 +15,7 @@ class datasetGenerator():
     it generates data.json dataset by instanciating it
 
     or by retrieving data from https://github.com/sebischair/NLU-Evaluation-Corpora
+    create chatito https://rodrigopivi.github.io/Chatito/
     """
     #TODO: consolidate dataflow to pandas dataframe y csv o yaml
     def __init__(self, dataset="", size= 200, filename= "data.json", randomSeed= 42):
@@ -30,7 +30,6 @@ class datasetGenerator():
             self.sampleData(size, randomSeed)
             self.saveData()
         if dataset == "AskUbuntuCorpus" or dataset == "ChatbotCorpus" or dataset == "WebApplicationsCorpus":
-            input()
             self.getDataJson(dataset)
             self.sampleData(size, randomSeed)
             self.saveData()
@@ -56,8 +55,17 @@ class datasetGenerator():
 
         df = pd.DataFrame(data["sentences"])
         df = df.loc[df["intent"] != 'None']
+        df = self.changeToCompliantLabel(df)
         self.labels = df.intent.tolist()
         self.sentences = df.text.tolist()
+
+    def changeToCompliantLabel(self,df):
+        def getCompliantLabel(uniqueLabel):
+            return  "".join([c for c in uniqueLabel if c.isalpha()])
+        self.uniqueLabels = df.intent.unique()
+        for uL in self.uniqueLabels:
+            df["intent"].replace(uL, getCompliantLabel(uL), inplace= True)
+        return df
 
     def sampleData(self, size= 200, randomSeed = 42):
         random.seed(randomSeed)
@@ -70,4 +78,5 @@ class datasetGenerator():
         df = pd.DataFrame(data = {"sentences": self.sentences, "labels": self.labels})
         df.to_csv(os.path.join("..","data","data.csv"),index= False)
 
-d = datasetGenerator("AskUbuntuCorpus")
+if __name__ == "__main__":
+    a = datasetGenerator('AskUbuntuCorpus')
