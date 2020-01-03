@@ -12,6 +12,8 @@ class datasetGenerator():
     creates a base dataset from senseval in NLTK
 
     it generates data.json dataset by instanciating it
+
+    or by retrieving data from https://github.com/sebischair/NLU-Evaluation-Corpora
     """
     def __init__(self, dataset="", size= 200, filename= "data.json", randomSeed= 42):
         #TODO: if data.json exists, use it
