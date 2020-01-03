@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "newagent-jtmdcp",
+  "private_key_id": "6ab87644d754f22ff4d76f9eb2f790c13dc9ceef",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsIVIq3WCqzk65\nqx8PJreSXibJNlAkmVTjL1uDDrFqNawc850O57gY2m/+DaMlv4u/qTvgPrto6BbN\nWcij6j3hFbNqaQ/x9cTyeYfHVLgoQrFioO6/v5IiVlWHHL6r9eW8eX3NAna/oDfv\n/asSTFgqMzzeDqONbP1ceDmYpOJy0qJEnoP+ruXqZfRma5SxY8BqJvbGEgdVNw/F\ng+WCFioUzgqUXoPyyIFm33j8ZSBZpRHo2vGL5BYvUtNbZa8WXpgB0/kiv0UW4Ngj\n8zU/PJU9n/eDUQzCU06b3SdOZ2bBcUUImu3Ayo+rGNxT69xuuerEs95gGraaU4JG\nwSZ1QEQfAgMBAAECggEAOCoHLYVebV0zwtFbKQ5xB4lBDpZyP/7n+9kP+wtoSEeL\nCUdUD/D72OAteq/odAC0EK2fo+PUMr7H8elB1nowBqmWCTqOwVx4DsYoz5mNHVXl\nm1D3lglkHWAeOB/g9ysc8wqRSbtsE8qrddtHXokam2psiegs5ZCSewGfiXcDjIM0\n+sZAvoKZabKjTCxfQ0brAVd6C0GbBVMwOudr+56+ltxGwB5M3VXawiiB3XsUKy8O\nySY7rd67UG+f1M34Z7/zg0OP3IPNzEi7N4KNpO8BOi0LUfSSgh262aSDSTOSBOVg\nKyuFudIyOoQ+QSj5IMEiP/8OGQevjEJfegMUBxhsgQKBgQDWMn2WEhS39thoMUtD\nUApu+vJF4Hlx++1rRYJlmkqD0nhX+3OgpxFFbyZGVqH8exFqVCI9B3fh52AeNUSv\n14TnovO31L0ZDjHNT2ccAFABPZfT1DyUC+0aN3FXNfBxymteqdJw7SqbGBQqxzxR\nyUW9e4uH9yCXz8WUE1ST13vnNwKBgQDNuR4Dm4nmKpLZ5K5nOHnOORCLUkERYxPx\nhiO0KSztiuVikxxXti6pVvpe6yNfLGa2teT9cmN5iNjAA5TRx+WGk0ZPq3BIYayO\n5dAhlYrpgsgxfLR0OhVosQv7OHdlrwJkNXYER+TEcKd/ZVUa2+vbSnuWMY0fzCjY\ngPgjA+cuWQKBgQCRB4LNF9T7cqG4epfxLcLCvhtIgOL58JAir9/Il52Yf+uH9vOl\ndTlWgBm0SnhHkbSLAAhmtiXPyW/lREALp6uPg1/tupeG3XuO/hJcfUGudVvVy8Bw\npVqXA680U4tIILxuTiH04ECW3sjY5inLXrJfx8UD/KoO4FlxF12O9LoqJQKBgEKZ\n2LawRy+lvs8d8rxmE0EJRmrkYT5gxhceJzbvUaVBn0uPdtCKoYafKwVJuLTaKhKi\nxpSq0LuK6ykWv7o+rfcofM3UIdC9FmFY003cHRHGDku/JKiwGThAgTF+sWDRDMQm\nbqOqJszV79QVmTzN0Ai5j1MrjZWqwdp9vlePrutZAoGABrEU9ii/u1sO7b7FwTLk\npQ/l6E4UBTf+CoFyLpwE6p4c8NdwMSQElz/ESQ7BIH+Th5vNMeS8Jq3jDjiphBbq\n67rzjAX0gUFmC/zRXkXAL+02MJARsapiP9+Q0YlEtbtRfmYzYZKk9JKsR8rsZ+us\n6tO1KbQdCdpfE2/rJy6RmJk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "guidotorresmx@gmail.com",
+  "client_email2": "dialogoflowclientforpython@newagent-jtmdcp.iam.gserviceaccount.com",
+  "client_id": "115279494670266470399",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogoflowclientforpython%40newagent-jtmdcp.iam.gserviceaccount.com"
+}
