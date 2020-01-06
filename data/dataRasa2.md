@@ -1,0 +1,158 @@
+## intent:SoftwareRecommendation
+- Is there a project management software for Ubuntu like Microsoft Project?
+- Is there software that can view .dwg files?
+- Is it recommended to upgrade to Lubuntu 15.04?
+- A light alternative to gnome-system-monitor?
+- Password Management Applications?
+- What's the best Wireframing tool?
+- Is there a software utility to adjust screen gamma/brightness/contrast?
+- What are some good PHP editors?
+- Is there any software that will do face recognition in photos?
+- What screenshot tools are available?
+- Which PDF Viewer would you recommend?
+- What IRC clients are available?
+- Which application do you recommend for watching TV (DVB)?
+- Software to create a video slideshow?
+- What's a simple "colour picker" app for GNOME?
+- Is there a tool like wifi analyzer for ubuntu?
+- Tool for recovering deleted data from a flash drive
+- What is a good MongoDB GUI client?
+- Are there any hardware diagnostic tools?
+- PDF to word conversion software?
+- What are some good ASCII art generators?
+- Is there LAN topology mapping software available in Ubuntu?
+- Applications to replace iTunes for iPod synchronization?
+- In Unity how do I see the details of a given launcher?
+- Is there any recovery software available for ext4?
+- What Is The Best HDR Software?
+- Recommendation for Regex editor?
+- Please recommend a hex editor for shell
+- What new games are available for Ubuntu in 2011?
+- What do you use to edit Microsoft Word documents (docx)?
+- Can you recommend a good modern GUI download manager (wget wrapper?)
+- Removing Recently used items in 12.04
+- Software to read a QR code?
+- Which programs can I use to edit PDF files?
+- Which is the best PDF metadata viewer for Ubuntu?
+- Wubi Device /dev/loop0 full. How to get more space?
+- UPNP / DLNA (client) player recommendations?
+- Is there an SSH connection manager?
+- What are some good GUI binary viewers/editors?
+- What scientific plotting software is available?
+- What developer text editors are available for Ubuntu?
+- Extracting embedded images from a PDF
+- Can you recommend a password generator?
+- Any app that tells me to take regular breaks from working?
+- Is there any program for fuzzy string matching which provides a match score?
+- What's the best Mind Mapping Software?
+- Is there an application for reading mobi files?
+- Any command line calculator for Ubuntu?
+- What to use to quickly cut Audio/Video
+- What IDEs are available for Ubuntu?
+- What blog editor software are available?
+- What software can I use to view epub documents?
+- Is there a lightweight tool to crop images quickly?
+- Is there a Linux file manager with a proper drop-down tree view? (like finder in OS X)
+- On really old Ubuntu 6.06 - How to upgrade
+- MySQL GUI Tools
+- What tools do you use to monitor a web server?
+## intent:MakeUpdate
+- update-manager: upgrade to 15.04 rather than 16.04
+- How do I update Xubuntu 11.10 to Xubuntu 12.04 LTS?
+- how to upgrade from ubuntu 15.04 to 15.10?
+- Upgrading from 12.04 to 13.10 ( Unanswered questions )
+- How to partially upgrade Ubuntu 11.10 from Ubuntu 11.04?
+- How do I upgrade to the release version of 16.04 if I am running Beta?
+- Upgrading from Ubuntu 14.04 to 15.04
+- upgrading to Ubuntu 13.10 from Ubuntu 13.04
+- Upgrading 16.04 to 16.04.1
+- Using 12.04 can I compile packages with gcc for 10.04?
+- Cannot upgrade from 12.04LTS to 14.04
+- Force upgrade 12.10 to 13.04
+- Do I need to uninstall 10.04 to upgrade to 12.04?
+- How to upgrade from 16.04 LTS to 16.04.1 LTS
+- How to upgrade from 14.04 LTS or 15.10 to 16.04 from terminal
+- Ho do I update to 13.04 from the beta?
+- Update 11.04 to 12.04 with LiveCD
+- Upgrade from 9.10 to 11.04
+- How to upgrade Ubuntu 9.10 to 12.10 via terminal?
+- Upgrade to 12.04 64 bit
+- How to Upgrade from 11.10 to 12.04 when you've got a problem?
+- How to upgrade Ubuntu 14.04.1 to 14.04.2?
+- Upgrade 12.04 to 12.10 using startup disk
+- Upgrading from 10.04 to 11.10
+- Is there an upgrade procedure from 12.04 LTS to 14.04 LTS
+- Doubts regarding the 15.04 upgrade (is it inevitable and unavoidable?)
+- Problems upgrading Ubuntu 12.10 to 13.04
+- How to upgrade Ubuntu 12.04 to 14.04 if I have dual boot with windows 7?
+- Problem upgrading Ubuntu 9.10
+- Upgrading from 10.10 to 11.04 how much space is needed?
+- How to upgrade from 12.10 to 14.04
+- Upgrading from ubuntu 12.04 to 13.10
+- Upgrade from 12.04 to 12.10 without losing files?
+- Upgrade 10.10 to 11.04
+- Is it worth upgrading from 12.04 LTS to 13.04
+- How can i upgrade to Ubuntu 14.04 final from 14.04 Beta correctly?
+- Why did the upgrade from 11.10 to 12.04 ruin my system?
+- Is any offline upgrade from 13.10 to 14.04 possible?
+- Problems upgrading from 12.04 to 14.04
+- How to upgrade from Ubuntu 10.10 to 11.04?
+- Is it necessary to upgrade to 15.10 from 14.04?
+- Do I need to backup my 12.04 system to upgrade to 12.04.1?
+- Ubuntu upgrade failed
+- Upgrading From 11.04 (32bit) to 12.04 (64bit)
+- Upgrading Ubuntu Server 9.10 to 10.04
+- Do I need to reinstall everything to upgrade from 13.10 to 14.10?
+- Upgrading from 11.10 to 12.04
+## intent:ShutdownComputer
+- Keyboard shortcut to shutdown?
+- How do I fix a shutdown problem?
+- What does my computer do when I click 'Shut Down'?
+- How can I automatically shutdown the system after a specific time?
+- what is the right way to shutdown ubuntu using the command line?
+- shutdown 5:30pm every day
+- shutdown in specific way if no-one uses computer
+- How can I make shutdown not require admin password?
+- Shutdown problem in Ubuntu 16.04
+- How to troubleshoot slow shutdown?
+- What is the command to open the shutdown dialog?
+- What is the proper terminal-way to shutdown?
+- How can I enable shutdown verbosity?
+- How to Shut down Ubuntu by using keyboard?
+- How can one shutdown a PC using the keyboard?
+- How to shutdown the computer after Xsession ends?
+- What graphical utility can I use for Ubuntu auto shutdown?
+- How do I shut down without the confirmation prompt?
+- How to shutdown computer when users are logged on?
+- My system doesn't go shutdown
+- shut down without extra question
+- How can I shutdown the computer when a certain process ends?
+- No action when shutdown pressed
+- Shutdown after a certain time
+- Hotkey to shut down from login screen?
+- Ubuntu Shut down app
+- Are there any Keyboard Shortcuts to Shutdown?
+## intent:SetupPrinter
+- No matter what I do Ubuntu 15.04 does not recognize HP LaserJet 1020
+- How do I install drivers for the Panasonic MB1900CX All-in-One Printer/Scanner?
+- Installing EPSON L355 on Ubuntu 14.04
+- Install printer Lexmark X4690 (ubuntu 12.04)
+- How to add a network printer on Ubuntu 15.10?
+- Install Canon MP560 Ubuntu 15.04
+- How can I install a Pantum 2502W laser printer on Ubuntu
+- How to Install a Canon MF8040Cn Printer on Ubuntu 12.04
+- How to setup wireless printing from a printer connected via usb on Ubuntu Server 12.10?
+- How do I setup my HP C4140 printer wirelessly?
+- How Do I Install Canon MF8000C Printer in Ubuntu 15.10?
+- How To Install Canon LBP2900B printer in 14.04 LTS ? I tried the method for LBP2900 but it didnt work
+- How do I install drivers for a Konica Minolta 200?
+- How to Install Brother DCP-8110DN Laser Printer on Ubuntu?
+- Installing Epson XP-424 wireless printer
+- Cannot setup HP All in one DJ3630
+- Cannot install printer driver epson l210
+- How do I install Dell 2150cdn printer
+- How to setup HP printer/scanner on ubuntu?
+- How to install a Lexmark z600 series printer?
+- How to install a Brother MFC-5890CN network printer?
+- How to install Canon LBP330 in Lts 16.04
+- How do I install the HP F4280 printer?
