@@ -9,10 +9,10 @@ now working on wit
 - rasa
 - watson
 - luis
+- dialogflow
 
 
 # missing
-- dialogflow
 - wit
 - snips
 - nlp.js
