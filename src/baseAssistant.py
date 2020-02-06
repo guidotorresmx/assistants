@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class baseAssistant(ABC):
     @abstractmethod
     def __init__():
