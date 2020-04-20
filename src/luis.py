@@ -7,10 +7,7 @@
 """
 import os
 import yaml
-import json
 import time
-import datetime
-from pprint import pprint
 from azure.cognitiveservices.language.luis.authoring import LUISAuthoringClient
 from msrest.authentication import CognitiveServicesCredentials
 import pandas as pd
@@ -37,7 +34,7 @@ class luis(baseAssistant):
         self.version_id = "0.1"
 
     def getCreds(self, credsPath=None):
-        if credsPath == None:
+        if credsPath is None:
             credsPath = os.path.join("..", "creds", "creds.yaml")
         creds = {}
         with open(credsPath, "r") as stream:
@@ -50,7 +47,6 @@ class luis(baseAssistant):
     def getWorkspaceID(self):
         def getApp():
             return self.assistant.apps.list()[0].id
-            apps = getApps()
 
         self.app_id = getApp()
         return self.app_id
@@ -68,13 +64,14 @@ class luis(baseAssistant):
         for intent in self.getIntents():
             self.deleteIntent(intent)
 
-    def getResponse(self, msg="bye"):
+    def getResponse(self, msg):
         response = {}
         try:
             response = requests.get(
                 self.creds["luis"]["ENDPOINT"] + urllib.parse.quote_plus(msg)
             ).json()
-        except:
+        except Exception as ex:
+            print(ex)
             self.update()
             response = requests.get(self.endpoint + urllib.parse.quote_plus(msg)).json()
 
@@ -82,7 +79,7 @@ class luis(baseAssistant):
 
     def setData(self, filename="data.csv"):
         def setEntityData(intent, utterancesList):
-            intent_id = self.assistant.model.add_intent(
+            self.assistant.model.add_intent(
                 self.app_id, self.version_id, intent
             )
 
@@ -92,7 +89,7 @@ class luis(baseAssistant):
 
             # TODO: simplify
             for i in range(1 + len(utterances) // 100):
-                utterances_result = self.assistant.examples.batch(
+                self.assistant.examples.batch(
                     self.app_id, self.version_id, utterances[i * 100 : (i + 1) * 100]
                 )
 
@@ -104,7 +101,9 @@ class luis(baseAssistant):
         self.update()
 
     def update(self):
-        # async_training = a.assistant.train.train_version(self.app_id, self.version_id, raw = True)
+        """
+         overrides baseAssistant update method for appropiate training
+        """
         async_training = self.assistant.train.train_version(
             self.app_id, self.version_id, raw=False
         )
@@ -119,9 +118,9 @@ class luis(baseAssistant):
             self.app_id, self.version_id, is_staging=False, region="westus"
         )
 
-        self.endpoint = (
-            publish_result.endpoint_url
-            + "?subscription-key="
-            + self.creds["luis"]["APIKEY"]
-            + "&q="
-        )
+        temp = publish_result.endpoint_url
+        temp += "?subscription-key="
+        temp += self.creds["luis"]["APIKEY"]
+        temp += "&q="
+
+        self.endpoint = (temp)

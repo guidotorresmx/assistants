@@ -3,7 +3,6 @@
 """
 
 import os
-import yaml
 import dialogflow_v2
 from google.oauth2 import service_account
 import uuid
@@ -23,17 +22,6 @@ class dialogflow(baseAssistant):
         self.assistant = dialogflow_v2.SessionsClient(credentials=self.credentials)
         self.intents_client = dialogflow_v2.IntentsClient(credentials=self.credentials)
         self.parent = self.intents_client.project_agent_path(self.project_id)
-
-    def getCreds(self, credsPath=None):
-        if credsPath is None:
-            credsPath = os.path.join("..", "creds", "creds.yaml")
-        creds = {}
-        with open(credsPath, "r") as stream:
-            try:
-                creds = yaml.safe_load(stream)
-            except yaml.YAMLError as exc:
-                print(exc)
-        return creds
 
     def getWorkspaceID(self):
         return self.assistant.session_path(self.project_id, self.session_id)
@@ -97,9 +85,6 @@ class dialogflow(baseAssistant):
         intents = self.getIntents(name=True)
         for intent in intents:
             self.deleteIntent(intent)
-
-    def update(self):
-        pass
 
 
 if __name__ == "__main__":

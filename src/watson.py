@@ -6,7 +6,6 @@
         create unittests
 """
 import os
-import yaml
 from ibm_watson import AssistantV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -33,17 +32,6 @@ class watson(baseAssistant):
         self.assistant.set_service_url(self.creds["watson"]["URL"])
 
         self.assistant.set_disable_ssl_verification(True)
-
-    def getCreds(self, credsPath=None):
-        if credsPath is None:
-            credsPath = os.path.join("..", "creds", "creds.yaml")
-        creds = {}
-        with open(credsPath, "r") as stream:
-            try:
-                creds = yaml.safe_load(stream)
-            except yaml.YAMLError as exc:
-                print(exc)
-        return creds
 
     def getWorkspaceID(self):
         return self.assistant.list_workspaces().get_result()["workspaces"][0][
@@ -89,6 +77,3 @@ class watson(baseAssistant):
     def deleteAllIntents(self):
         for intent in self.getIntents()["intents"]:
             self.deleteIntent(intent)
-
-    def update(self):
-        pass
